@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "7c183b47-3bab-4602-84d5-84be9a423dc8",
+		"name": "urbanhive homefarm REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5477481"
+	},
+	"item": [
+		{
+			"name": "Get Farm Info",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{FARM-IP}}/farm-info",
+					"host": [
+						"{{FARM-IP}}"
+					],
+					"path": [
+						"farm-info"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put Farm Settings",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brightness\": 100,\n    \"lightTime\": {\n        \"lightMode\": \"custom\",\n        \"startHour\": 6,\n        \"startMinute\": 0,\n        \"endHour\": 22,\n        \"endMinute\": 30,\n        \"timezone\": 2\n    },\n    \"rows\": [\n        {\n            \"lightOn\": true\n        },\n        {\n            \"lightOn\": true\n        },\n        {\n            \"lightOn\": true\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{FARM-IP}}/farm-settings",
+					"host": [
+						"{{FARM-IP}}"
+					],
+					"path": [
+						"farm-settings"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "FARM-IP",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
