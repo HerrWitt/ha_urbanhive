@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import requests
-from urllib.request import urlopen
 import json
 
 res = requests.get('http://192.168.2.154/farm-info')
