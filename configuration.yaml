@@ -1,5 +1,5 @@
 #
-# UrbanHive Integration
+# UrbanHive REST API
 #
 rest:
   - authentication: none
