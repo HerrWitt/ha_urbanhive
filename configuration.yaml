@@ -1,3 +1,6 @@
+#
+# UrbanHive Integration
+#
 rest:
   - authentication: none
     scan_interval: 30
@@ -11,25 +14,16 @@ rest:
 template:
   - sensor:
       - name: "Luftfeuchtigkeit"
-        unit_of_measurement: "W"
-        device_class: "power"
+        unit_of_measurement: "%"
+        device_class: "humidity"
         state_class: "measurement"
         unique_id: "homefarm_humidity"
         state: >
             {{ state_attr('sensor.homefarm', 'humidity') }}
-      - name: "Energie_Bezug"
-        unit_of_measurement: "kWh"
-        device_class: "energy"
-        state_class: "total_increasing"
-        unique_id: "energy_received"
+      - name: "Temperatur"
+        unit_of_measurement: "°C"
+        device_class: "temperature"
+        state_class: "measurement"
+        unique_id: "homefarm_temperature"
         state: >
-            {{ state_attr('sensor.poweropti', 'A_Plus') }}
-      - name: "Energie_Einspeisung"
-        unit_of_measurement: "kWh"
-        device_class: "energy"
-        state_class: "total_increasing"
-        unique_id: "energy_fed"
-        state: >
-            {{ state_attr('sensor.poweropti', 'A_Minus') }}
-            
-            
+            {{ state_attr('sensor.homefarm', 'temperature') }}
